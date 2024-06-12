@@ -1,0 +1,57 @@
+[project]
+name = "learn-python-injector"
+version = "0.1.0"
+dependencies = [
+    "injector>=0.21.0",
+    "ruff>=0.4.8",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/learn_python_injector"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E", 
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+    # pep8-naming
+    "N",
+    # pydocstyle
+    # "D",
+    # flake8-annotations
+    "ANN",
+]
+
+# ignore = [
+#     "D400", "D415", "D100"
+# ]
+
+[tool.ruff.format]
+docstring-code-format = true
+docstring-code-line-length = 100
